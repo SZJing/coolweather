@@ -1,5 +1,6 @@
 package com.coolweather.app;
 
+
 import util.HttpCallbackListener;
 import util.HttpUtil;
 import util.Utility;
@@ -171,6 +172,8 @@ queryWeatherInfo(weatherCode);
 	currentDateText.setText(prefs.getString("current_date", ""));
 	weatherInfoLayout.setVisibility(View.VISIBLE);
 	cityNameText.setVisibility(View.VISIBLE);
+	Intent intent = new Intent(this, AutoUpdateService.class);
+	startService(intent);
 	}
 
 }
